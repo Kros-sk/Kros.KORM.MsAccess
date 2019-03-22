@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Kros-sk/Kros.KORM.MsAccess/blob/master/README.md</projectUrl>
+    <iconUrl>https://en.gravatar.com/userimage/137934964/524e95fbd8c2e8779e02819ab6902bef.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright © KROS a.s.</copyright>
+    <tags>Kros;KORM;ORM;Database;DAL;SQL;Database;MSSQL;Data;BulkInsert;BulkOperation;BulkCopy;
+    BulkUpdate;Bulk Insert;Bulk Update;MsAccess;</tags>
+    <releaseNotes>https://github.com/Kros-sk/Kros.KORM.MsAccess/releases</releaseNotes>
+    <dependencies>
+      <dependency id="Kros.Utils.MsAccess" version="1.6.2" />
+      <dependency id="Kros.KORM" version="3.7.2" />
+    </dependencies>
+  </metadata>
+</package>

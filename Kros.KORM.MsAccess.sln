@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28714.193
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kros.KORM.MsAccess", "src\Kros.KORM.MsAccess.csproj", "{916834A9-14C5-498D-A3ED-2E3BB5B8A8C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F98075A9-AFBF-42A6-BF99-070F54BBA3EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kros.KORM.MsAccess.UnitTests", "tests\Kros.KORM.MsAccess.UnitTests.csproj", "{6F9AA26E-8E68-4D5F-BD21-01491AAA4BDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{916834A9-14C5-498D-A3ED-2E3BB5B8A8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{916834A9-14C5-498D-A3ED-2E3BB5B8A8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{916834A9-14C5-498D-A3ED-2E3BB5B8A8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{916834A9-14C5-498D-A3ED-2E3BB5B8A8C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9AA26E-8E68-4D5F-BD21-01491AAA4BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9AA26E-8E68-4D5F-BD21-01491AAA4BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9AA26E-8E68-4D5F-BD21-01491AAA4BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9AA26E-8E68-4D5F-BD21-01491AAA4BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F9AA26E-8E68-4D5F-BD21-01491AAA4BDF} = {F98075A9-AFBF-42A6-BF99-070F54BBA3EA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62686C83-FD22-48A7-B4B2-F4981D81D79E}
+	EndGlobalSection
+EndGlobal

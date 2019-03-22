@@ -1,0 +1,109 @@
+﻿using Kros.Data.BulkActions;
+using Kros.Data.BulkActions.MsAccess;
+using Kros.Data.Schema;
+using Kros.Data.Schema.MsAccess;
+using Kros.KORM.Helper;
+using Kros.KORM.Materializer;
+using Kros.KORM.Query.Sql;
+using System.Configuration;
+using System.Data.Common;
+using System.Data.OleDb;
+
+namespace Kros.KORM.Query.MsAccess
+{
+    /// <summary>
+    /// Provider, which know execute query for MsAccess.
+    /// </summary>
+    /// <seealso cref="Kros.KORM.Query.QueryProvider" />
+    public class MsAccessQueryProvider : QueryProvider
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MsAccessQueryProvider"/> class.
+        /// </summary>
+        /// <param name="connectionString">The connection string settings.</param>
+        /// <param name="sqlGeneratorFactory">The SQL generator factory.</param>
+        /// <param name="modelBuilder">The model builder.</param>
+        /// <param name="logger">The logger.</param>
+        public MsAccessQueryProvider(
+            ConnectionStringSettings connectionString,
+            ISqlExpressionVisitorFactory sqlGeneratorFactory,
+            IModelBuilder modelBuilder,
+            ILogger logger)
+            : base(connectionString, sqlGeneratorFactory, modelBuilder, logger)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MsAccessQueryProvider" /> class.
+        /// </summary>
+        /// <param name="connection">The connection.</param>
+        /// <param name="sqlGeneratorFactory">The SQL generator factory.</param>
+        /// <param name="modelBuilder">The model builder.</param>
+        /// <param name="logger">The logger.</param>
+        public MsAccessQueryProvider(DbConnection connection,
+            ISqlExpressionVisitorFactory sqlGeneratorFactory,
+            IModelBuilder modelBuilder,
+            ILogger logger)
+                : base(connection, sqlGeneratorFactory, modelBuilder, logger)
+        {
+        }
+
+        /// <summary>
+        /// Vráti <see cref="OleDbFactory.Instance">OleDbFactory.Instance</see>.
+        /// </summary>
+        public override DbProviderFactory DbProviderFactory => OleDbFactory.Instance;
+
+        /// <summary>
+        /// Returns, if provider supports preparing of command (<see cref="DbCommand.Prepare"/>).
+        /// </summary>
+        /// <returns>Returns <see langword="false"/>.</returns>
+        public override bool SupportsPrepareCommand() => false;
+
+        /// <summary>
+        /// Creates instance of <see cref="MsAccessBulkInsert" />.
+        /// </summary>
+        /// <returns>
+        /// Instance of <see cref="MsAccessBulkInsert" />.
+        /// </returns>
+        public override IBulkInsert CreateBulkInsert()
+        {
+            var transaction = GetCurrentTransaction();
+            if (IsExternalConnection || transaction != null)
+            {
+                return new MsAccessBulkInsert(Connection as OleDbConnection, transaction as OleDbTransaction);
+            }
+            else
+            {
+                return new MsAccessBulkInsert(ConnectionString);
+            }
+        }
+
+        /// <summary>
+        /// Creates instance of <see cref="MsAccessBulkUpdate" />.
+        /// </summary>
+        /// <returns>
+        /// Instance of <see cref="MsAccessBulkUpdate" />.
+        /// </returns>
+        public override IBulkUpdate CreateBulkUpdate()
+        {
+            var transaction = GetCurrentTransaction();
+
+            if (IsExternalConnection || transaction != null)
+            {
+                return new MsAccessBulkUpdate(Connection as OleDbConnection, transaction as OleDbTransaction);
+            }
+            else
+            {
+                return new MsAccessBulkUpdate(ConnectionString);
+            }
+        }
+
+        /// <summary>
+        /// Returns instance of <see cref="MsAccessSchemaLoader"/>.
+        /// </summary>
+        protected override IDatabaseSchemaLoader GetSchemaLoader()
+        {
+            return new MsAccessSchemaLoader();
+        }
+    }
+}
