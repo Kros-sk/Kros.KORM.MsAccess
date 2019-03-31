@@ -1,4 +1,4 @@
-# Welcome to [Kros.KORM.MsAccess](xref:Kros.KORM.MsAccess)
+# Welcome to [Kros.KORM.MsAccess](xref:Kros.KORM.Query.MsAccess)
 
 Kros.KORM library extension for MS Access support. Only applicable in the full .NET framework.
 
