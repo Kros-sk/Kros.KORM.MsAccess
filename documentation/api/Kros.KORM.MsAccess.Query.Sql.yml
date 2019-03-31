@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kros.KORM.MsAccess.Query.Sql
+  commentId: N:Kros.KORM.MsAccess.Query.Sql
+  id: Kros.KORM.MsAccess.Query.Sql
+  children:
+  - Kros.KORM.MsAccess.Query.Sql.MsAccessSqlExpressionVisitorFactory
+  langs:
+  - csharp
+  - vb
+  name: Kros.KORM.MsAccess.Query.Sql
+  nameWithType: Kros.KORM.MsAccess.Query.Sql
+  fullName: Kros.KORM.MsAccess.Query.Sql
+  type: Namespace
+  assemblies:
+  - Kros.KORM.MsAccess
+references:
+- uid: Kros.KORM.MsAccess.Query.Sql.MsAccessSqlExpressionVisitorFactory
+  commentId: T:Kros.KORM.MsAccess.Query.Sql.MsAccessSqlExpressionVisitorFactory
+  name: MsAccessSqlExpressionVisitorFactory
+  nameWithType: MsAccessSqlExpressionVisitorFactory
+  fullName: Kros.KORM.MsAccess.Query.Sql.MsAccessSqlExpressionVisitorFactory

@@ -1,0 +1,352 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  commentId: T:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  id: MsAccessQuerySqlGenerator
+  parent: Kros.KORM.Query.Sql.MsAccess
+  children:
+  - Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.#ctor(IDatabaseMapper)
+  - Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindAnyCondition(System.String)
+  - Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindSubstring(System.Linq.Expressions.MethodCallExpression)
+  - Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToLower(System.Linq.Expressions.MethodCallExpression)
+  - Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToUpper(System.Linq.Expressions.MethodCallExpression)
+  - Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindTrim(System.Linq.Expressions.MethodCallExpression)
+  langs:
+  - csharp
+  - vb
+  name: MsAccessQuerySqlGenerator
+  nameWithType: MsAccessQuerySqlGenerator
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  type: Class
+  source:
+    remote:
+      path: src/Query/Sql/MsAccessQuerySqlGenerator.cs
+      branch: master
+      repo: https://github.com/Kros-sk/Kros.KORM.MsAccess.git
+    id: MsAccessQuerySqlGenerator
+    path: ../src/Query/Sql/MsAccessQuerySqlGenerator.cs
+    startLine: 9
+  assemblies:
+  - Kros.KORM.MsAccess
+  namespace: Kros.KORM.Query.Sql.MsAccess
+  summary: "\nGenerator sql query for MS Access.\n"
+  example: []
+  syntax:
+    content: 'public class MsAccessQuerySqlGenerator : DefaultQuerySqlGenerator'
+    content.vb: >-
+      Public Class MsAccessQuerySqlGenerator
+          Inherits DefaultQuerySqlGenerator
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.#ctor(IDatabaseMapper)
+  commentId: M:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.#ctor(IDatabaseMapper)
+  id: '#ctor(IDatabaseMapper)'
+  parent: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  langs:
+  - csharp
+  - vb
+  name: MsAccessQuerySqlGenerator(IDatabaseMapper)
+  nameWithType: MsAccessQuerySqlGenerator.MsAccessQuerySqlGenerator(IDatabaseMapper)
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.MsAccessQuerySqlGenerator(IDatabaseMapper)
+  type: Constructor
+  source:
+    remote:
+      path: src/Query/Sql/MsAccessQuerySqlGenerator.cs
+      branch: master
+      repo: https://github.com/Kros-sk/Kros.KORM.MsAccess.git
+    id: .ctor
+    path: ../src/Query/Sql/MsAccessQuerySqlGenerator.cs
+    startLine: 15
+  assemblies:
+  - Kros.KORM.MsAccess
+  namespace: Kros.KORM.Query.Sql.MsAccess
+  summary: "\nInitializes a new instance of the <xref href=\"Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public MsAccessQuerySqlGenerator(IDatabaseMapper databaseMapper)
+    parameters:
+    - id: databaseMapper
+      type: IDatabaseMapper
+      description: Database mapper.
+    content.vb: Public Sub New(databaseMapper As IDatabaseMapper)
+  overload: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindTrim(System.Linq.Expressions.MethodCallExpression)
+  commentId: M:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindTrim(System.Linq.Expressions.MethodCallExpression)
+  id: BindTrim(System.Linq.Expressions.MethodCallExpression)
+  parent: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  langs:
+  - csharp
+  - vb
+  name: BindTrim(MethodCallExpression)
+  nameWithType: MsAccessQuerySqlGenerator.BindTrim(MethodCallExpression)
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindTrim(System.Linq.Expressions.MethodCallExpression)
+  type: Method
+  source:
+    remote:
+      path: src/Query/Sql/MsAccessQuerySqlGenerator.cs
+      branch: master
+      repo: https://github.com/Kros-sk/Kros.KORM.MsAccess.git
+    id: BindTrim
+    path: ../src/Query/Sql/MsAccessQuerySqlGenerator.cs
+    startLine: 21
+  assemblies:
+  - Kros.KORM.MsAccess
+  namespace: Kros.KORM.Query.Sql.MsAccess
+  example: []
+  syntax:
+    content: protected override Expression BindTrim(MethodCallExpression expression)
+    parameters:
+    - id: expression
+      type: System.Linq.Expressions.MethodCallExpression
+    return:
+      type: System.Linq.Expressions.Expression
+    content.vb: Protected Overrides Function BindTrim(expression As MethodCallExpression) As Expression
+  overload: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindTrim*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToUpper(System.Linq.Expressions.MethodCallExpression)
+  commentId: M:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToUpper(System.Linq.Expressions.MethodCallExpression)
+  id: BindToUpper(System.Linq.Expressions.MethodCallExpression)
+  parent: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  langs:
+  - csharp
+  - vb
+  name: BindToUpper(MethodCallExpression)
+  nameWithType: MsAccessQuerySqlGenerator.BindToUpper(MethodCallExpression)
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToUpper(System.Linq.Expressions.MethodCallExpression)
+  type: Method
+  source:
+    remote:
+      path: src/Query/Sql/MsAccessQuerySqlGenerator.cs
+      branch: master
+      repo: https://github.com/Kros-sk/Kros.KORM.MsAccess.git
+    id: BindToUpper
+    path: ../src/Query/Sql/MsAccessQuerySqlGenerator.cs
+    startLine: 30
+  assemblies:
+  - Kros.KORM.MsAccess
+  namespace: Kros.KORM.Query.Sql.MsAccess
+  example: []
+  syntax:
+    content: protected override Expression BindToUpper(MethodCallExpression expression)
+    parameters:
+    - id: expression
+      type: System.Linq.Expressions.MethodCallExpression
+    return:
+      type: System.Linq.Expressions.Expression
+    content.vb: Protected Overrides Function BindToUpper(expression As MethodCallExpression) As Expression
+  overload: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToUpper*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToLower(System.Linq.Expressions.MethodCallExpression)
+  commentId: M:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToLower(System.Linq.Expressions.MethodCallExpression)
+  id: BindToLower(System.Linq.Expressions.MethodCallExpression)
+  parent: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  langs:
+  - csharp
+  - vb
+  name: BindToLower(MethodCallExpression)
+  nameWithType: MsAccessQuerySqlGenerator.BindToLower(MethodCallExpression)
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToLower(System.Linq.Expressions.MethodCallExpression)
+  type: Method
+  source:
+    remote:
+      path: src/Query/Sql/MsAccessQuerySqlGenerator.cs
+      branch: master
+      repo: https://github.com/Kros-sk/Kros.KORM.MsAccess.git
+    id: BindToLower
+    path: ../src/Query/Sql/MsAccessQuerySqlGenerator.cs
+    startLine: 39
+  assemblies:
+  - Kros.KORM.MsAccess
+  namespace: Kros.KORM.Query.Sql.MsAccess
+  example: []
+  syntax:
+    content: protected override Expression BindToLower(MethodCallExpression expression)
+    parameters:
+    - id: expression
+      type: System.Linq.Expressions.MethodCallExpression
+    return:
+      type: System.Linq.Expressions.Expression
+    content.vb: Protected Overrides Function BindToLower(expression As MethodCallExpression) As Expression
+  overload: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToLower*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindSubstring(System.Linq.Expressions.MethodCallExpression)
+  commentId: M:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindSubstring(System.Linq.Expressions.MethodCallExpression)
+  id: BindSubstring(System.Linq.Expressions.MethodCallExpression)
+  parent: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  langs:
+  - csharp
+  - vb
+  name: BindSubstring(MethodCallExpression)
+  nameWithType: MsAccessQuerySqlGenerator.BindSubstring(MethodCallExpression)
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindSubstring(System.Linq.Expressions.MethodCallExpression)
+  type: Method
+  source:
+    remote:
+      path: src/Query/Sql/MsAccessQuerySqlGenerator.cs
+      branch: master
+      repo: https://github.com/Kros-sk/Kros.KORM.MsAccess.git
+    id: BindSubstring
+    path: ../src/Query/Sql/MsAccessQuerySqlGenerator.cs
+    startLine: 48
+  assemblies:
+  - Kros.KORM.MsAccess
+  namespace: Kros.KORM.Query.Sql.MsAccess
+  example: []
+  syntax:
+    content: protected override Expression BindSubstring(MethodCallExpression expression)
+    parameters:
+    - id: expression
+      type: System.Linq.Expressions.MethodCallExpression
+    return:
+      type: System.Linq.Expressions.Expression
+    content.vb: Protected Overrides Function BindSubstring(expression As MethodCallExpression) As Expression
+  overload: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindSubstring*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindAnyCondition(System.String)
+  commentId: M:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindAnyCondition(System.String)
+  id: BindAnyCondition(System.String)
+  parent: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  langs:
+  - csharp
+  - vb
+  name: BindAnyCondition(String)
+  nameWithType: MsAccessQuerySqlGenerator.BindAnyCondition(String)
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindAnyCondition(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Query/Sql/MsAccessQuerySqlGenerator.cs
+      branch: master
+      repo: https://github.com/Kros-sk/Kros.KORM.MsAccess.git
+    id: BindAnyCondition
+    path: ../src/Query/Sql/MsAccessQuerySqlGenerator.cs
+    startLine: 71
+  assemblies:
+  - Kros.KORM.MsAccess
+  namespace: Kros.KORM.Query.Sql.MsAccess
+  summary: "\nAdds any method to query.\n"
+  example: []
+  syntax:
+    content: protected override string BindAnyCondition(string existsCondition)
+    parameters:
+    - id: existsCondition
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Protected Overrides Function BindAnyCondition(existsCondition As String) As String
+  overload: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindAnyCondition*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: Kros.KORM.Query.Sql.MsAccess
+  commentId: N:Kros.KORM.Query.Sql.MsAccess
+  name: Kros.KORM.Query.Sql.MsAccess
+  nameWithType: Kros.KORM.Query.Sql.MsAccess
+  fullName: Kros.KORM.Query.Sql.MsAccess
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  commentId: T:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+  name: MsAccessQuerySqlGenerator
+  nameWithType: MsAccessQuerySqlGenerator
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.#ctor*
+  commentId: Overload:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.#ctor
+  name: MsAccessQuerySqlGenerator
+  nameWithType: MsAccessQuerySqlGenerator.MsAccessQuerySqlGenerator
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.MsAccessQuerySqlGenerator
+- uid: IDatabaseMapper
+  isExternal: true
+  name: IDatabaseMapper
+  nameWithType: IDatabaseMapper
+  fullName: IDatabaseMapper
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindTrim*
+  commentId: Overload:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindTrim
+  name: BindTrim
+  nameWithType: MsAccessQuerySqlGenerator.BindTrim
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindTrim
+- uid: System.Linq.Expressions.MethodCallExpression
+  commentId: T:System.Linq.Expressions.MethodCallExpression
+  parent: System.Linq.Expressions
+  isExternal: true
+  name: MethodCallExpression
+  nameWithType: MethodCallExpression
+  fullName: System.Linq.Expressions.MethodCallExpression
+- uid: System.Linq.Expressions.Expression
+  commentId: T:System.Linq.Expressions.Expression
+  parent: System.Linq.Expressions
+  isExternal: true
+  name: Expression
+  nameWithType: Expression
+  fullName: System.Linq.Expressions.Expression
+- uid: System.Linq.Expressions
+  commentId: N:System.Linq.Expressions
+  isExternal: true
+  name: System.Linq.Expressions
+  nameWithType: System.Linq.Expressions
+  fullName: System.Linq.Expressions
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToUpper*
+  commentId: Overload:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToUpper
+  name: BindToUpper
+  nameWithType: MsAccessQuerySqlGenerator.BindToUpper
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToUpper
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToLower*
+  commentId: Overload:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToLower
+  name: BindToLower
+  nameWithType: MsAccessQuerySqlGenerator.BindToLower
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindToLower
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindSubstring*
+  commentId: Overload:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindSubstring
+  name: BindSubstring
+  nameWithType: MsAccessQuerySqlGenerator.BindSubstring
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindSubstring
+- uid: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindAnyCondition*
+  commentId: Overload:Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindAnyCondition
+  name: BindAnyCondition
+  nameWithType: MsAccessQuerySqlGenerator.BindAnyCondition
+  fullName: Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.BindAnyCondition
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
