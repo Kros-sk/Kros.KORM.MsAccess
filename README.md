@@ -1,4 +1,4 @@
-# Kros.KORM.MsAccess [![Build status](https://ci.appveyor.com/api/projects/status/xebjpdbakd45mfs4/branch/master?svg=true)](https://ci.appveyor.com/project/Kros/kros-libs-u2wo6/branch/master)
+# Kros.KORM.MsAccess [![Build Status](https://dev.azure.com/krossk/DevShared/_apis/build/status/Kros.KORM/Kros.KORM.MsAccess?branchName=features/build)](https://dev.azure.com/krossk/DevShared/_build/latest?definitionId=67&branchName=features/build)
 
 Kros.KORM is simple, fast and easy to use micro-ORM framework for .NETStandard created by Kros a.s. from Slovakia.
 
