@@ -44,25 +44,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Kros.KORM, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Kros.KORM.3.9.0\lib\net46\Kros.KORM.dll</HintPath>
+      <HintPath>..\packages\Kros.KORM.3.9.0\lib\net46\Kros.KORM.dll</HintPath>
     </Reference>
     <Reference Include="Kros.Utils, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Kros.Utils.1.9.0\lib\net46\Kros.Utils.dll</HintPath>
+      <HintPath>..\packages\Kros.Utils.1.9.0\lib\net46\Kros.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Kros.Utils.MsAccess, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Kros.Utils.MsAccess.1.6.2\lib\net46\Kros.Utils.MsAccess.dll</HintPath>
+      <HintPath>..\packages\Kros.Utils.MsAccess.1.6.2\lib\net46\Kros.Utils.MsAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SqlClient, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Data.SqlClient.4.5.0\lib\net46\System.Data.SqlClient.dll</HintPath>
+      <HintPath>..\packages\System.Data.SqlClient.4.5.0\lib\net46\System.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
