@@ -25,6 +25,8 @@ variables:
     value: 'Kros.KORM.MsAccess.UnitTests'
 
 steps:
+  - template: steps/delete-nupkgs.yml@templates
+
   - template: steps/nuget-download-and-restore.yml@templates
     parameters:
       useNugetConfig: 'false'
