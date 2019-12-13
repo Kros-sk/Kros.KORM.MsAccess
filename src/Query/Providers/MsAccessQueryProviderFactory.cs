@@ -3,7 +3,6 @@ using Kros.KORM.Helper;
 using Kros.KORM.Materializer;
 using Kros.KORM.Metadata;
 using Kros.KORM.MsAccess.Query.Sql;
-using System.Configuration;
 using System.Data.Common;
 using System.Data.OleDb;
 

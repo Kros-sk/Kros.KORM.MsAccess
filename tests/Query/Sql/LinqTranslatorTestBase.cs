@@ -11,12 +11,12 @@ using Kros.KORM.Query.Providers;
 using Kros.KORM.Query.Sql;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
@@ -221,11 +221,6 @@ namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
                 return default(TResult);
             }
 
-            public void ExecuteInTransaction(Action action)
-            {
-                throw new NotImplementedException();
-            }
-
             public Task ExecuteInTransactionAsync(Func<Task> action)
             {
                 throw new NotImplementedException();
@@ -241,30 +236,24 @@ namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
                 throw new NotImplementedException();
             }
 
-            public Task<int> ExecuteNonQueryAsync(string query)
-            {
-                throw new NotImplementedException();
-            }
-
-            public Task<int> ExecuteNonQueryAsync(string query, CommandParameterCollection parameters)
-            {
-                throw new NotImplementedException();
-            }
+            public Task<int> ExecuteNonQueryAsync(string query, CancellationToken cancellationToken = default) => throw new NotImplementedException();
+            public Task<int> ExecuteNonQueryAsync(string query, CancellationToken cancellationToken = default, params object[] paramValues) => throw new NotImplementedException();
+            public Task<int> ExecuteNonQueryAsync(string query, CommandParameterCollection parameters, CancellationToken cancellationToken = default) => throw new NotImplementedException();
 
             public int ExecuteNonQueryCommand(IDbCommand command)
             {
                 throw new NotImplementedException();
             }
 
-            public Task<int> ExecuteNonQueryCommandAsync(DbCommand command)
-            {
-                throw new NotImplementedException();
-            }
+            public Task<int> ExecuteNonQueryCommandAsync(DbCommand command, CancellationToken cancellationToken = default) => throw new NotImplementedException();
 
             public object ExecuteScalar<T>(IQuery<T> query)
             {
                 throw new NotImplementedException();
             }
+
+            public object ExecuteScalarCommand(IDbCommand command) => throw new NotImplementedException();
+            public Task<object> ExecuteScalarCommandAsync(DbCommand command, CancellationToken cancellationToken = default) => throw new NotImplementedException();
 
             public TResult ExecuteStoredProcedure<TResult>(string storedProcedureName)
             {
@@ -281,11 +270,14 @@ namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
                 throw new NotImplementedException();
             }
 
+            public ISqlExpressionVisitor GetExpressionVisitor() => throw new NotImplementedException();
+
             public void SetParameterDbType(DbParameter parameter, string tableName, string columnName)
             {
                 throw new NotImplementedException();
             }
 
+            public bool SupportsIdentity() => throw new NotImplementedException();
             public bool SupportsPrepareCommand() => true;
         }
 
@@ -294,10 +286,7 @@ namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
             public KORM.Query.IQueryProvider Create(DbConnection connection, IModelBuilder modelBuilder, IDatabaseMapper databaseMapper)
                 => new FakeQueryProvider();
 
-            public KORM.Query.IQueryProvider Create(ConnectionStringSettings connectionString, IModelBuilder modelBuilder, IDatabaseMapper databaseMapper)
-            {
-                throw new NotImplementedException();
-            }
+            public KORM.Query.IQueryProvider Create(KormConnectionSettings connectionString, IModelBuilder modelBuilder, IDatabaseMapper databaseMapper) => throw new NotImplementedException();
         }
     }
 }

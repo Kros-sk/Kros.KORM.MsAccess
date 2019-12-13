@@ -49,8 +49,8 @@
     <Reference Include="Kros.Utils, Version=1.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Kros.Utils.1.11.0\lib\net46\Kros.Utils.dll</HintPath>
     </Reference>
-    <Reference Include="Kros.Utils.MsAccess, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Kros.Utils.MsAccess.1.7.0\lib\net46\Kros.Utils.MsAccess.dll</HintPath>
+    <Reference Include="Kros.Utils.MsAccess, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kros.Utils.MsAccess.1.8.0\lib\net46\Kros.Utils.MsAccess.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.SqlClient, Version=1.10.19324.4, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
