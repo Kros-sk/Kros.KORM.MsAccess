@@ -4,8 +4,8 @@ using Kros.Data.Schema;
 using Kros.Data.Schema.MsAccess;
 using Kros.KORM.Helper;
 using Kros.KORM.Materializer;
+using Kros.KORM.Metadata;
 using Kros.KORM.Query.Sql;
-using System.Configuration;
 using System.Data.Common;
 using System.Data.OleDb;
 
@@ -24,12 +24,14 @@ namespace Kros.KORM.Query.MsAccess
         /// <param name="sqlGeneratorFactory">The SQL generator factory.</param>
         /// <param name="modelBuilder">The model builder.</param>
         /// <param name="logger">The logger.</param>
+        /// <param name="databaseMapper">The Database mapper.</param>
         public MsAccessQueryProvider(
-            ConnectionStringSettings connectionString,
+            KormConnectionSettings connectionString,
             ISqlExpressionVisitorFactory sqlGeneratorFactory,
             IModelBuilder modelBuilder,
-            ILogger logger)
-            : base(connectionString, sqlGeneratorFactory, modelBuilder, logger)
+            ILogger logger,
+            IDatabaseMapper databaseMapper)
+            : base(connectionString, sqlGeneratorFactory, modelBuilder, logger, databaseMapper)
         {
         }
 
@@ -40,11 +42,14 @@ namespace Kros.KORM.Query.MsAccess
         /// <param name="sqlGeneratorFactory">The SQL generator factory.</param>
         /// <param name="modelBuilder">The model builder.</param>
         /// <param name="logger">The logger.</param>
-        public MsAccessQueryProvider(DbConnection connection,
+        /// <param name="databaseMapper">The Database mapper.</param>
+        public MsAccessQueryProvider(
+            DbConnection connection,
             ISqlExpressionVisitorFactory sqlGeneratorFactory,
             IModelBuilder modelBuilder,
-            ILogger logger)
-                : base(connection, sqlGeneratorFactory, modelBuilder, logger)
+            ILogger logger,
+            IDatabaseMapper databaseMapper)
+            : base(connection, sqlGeneratorFactory, modelBuilder, logger, databaseMapper)
         {
         }
 

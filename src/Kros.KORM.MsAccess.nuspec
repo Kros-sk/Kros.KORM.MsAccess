@@ -11,13 +11,14 @@
     <iconUrl>https://en.gravatar.com/userimage/137934964/524e95fbd8c2e8779e02819ab6902bef.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <copyright>Copyright © KROS a.s.</copyright>
+    <copyright>Copyright © KROS a. s.</copyright>
     <tags>Kros;KORM;ORM;Database;DAL;SQL;Database;MSSQL;Data;BulkInsert;BulkOperation;BulkCopy;
     BulkUpdate;Bulk Insert;Bulk Update;MsAccess;</tags>
     <releaseNotes>https://github.com/Kros-sk/Kros.KORM.MsAccess/releases</releaseNotes>
     <dependencies>
-      <dependency id="Kros.Utils.MsAccess" version="1.6.2" />
-      <dependency id="Kros.KORM" version="3.7.2" />
+      <dependency id="Kros.Utils" version="1.11.0" />
+      <dependency id="Kros.Utils.MsAccess" version="1.8.0" />
+      <dependency id="Kros.KORM" version="4.0.0-alpha.14" />
     </dependencies>
   </metadata>
 </package>

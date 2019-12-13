@@ -3,7 +3,6 @@ using Kros.KORM.Helper;
 using Kros.KORM.Materializer;
 using Kros.KORM.Metadata;
 using Kros.KORM.MsAccess.Query.Sql;
-using System.Configuration;
 using System.Data.Common;
 using System.Data.OleDb;
 
@@ -26,7 +25,7 @@ namespace Kros.KORM.Query.MsAccess
         /// </returns>
         public IQueryProvider Create(DbConnection connection, IModelBuilder modelBuilder, IDatabaseMapper databaseMapper)
             => new MsAccessQueryProvider(
-                connection, new MsAccessSqlExpressionVisitorFactory(databaseMapper), modelBuilder, new Logger());
+                connection, new MsAccessSqlExpressionVisitorFactory(databaseMapper), modelBuilder, new Logger(), databaseMapper);
 
         /// <summary>
         /// Creates the specified MsAccess QueryProvider factory.
@@ -38,11 +37,11 @@ namespace Kros.KORM.Query.MsAccess
         /// Instance of <see cref="MsAccessQueryProvider"/>.
         /// </returns>
         public IQueryProvider Create(
-            ConnectionStringSettings connectionString,
+            KormConnectionSettings connectionString,
             IModelBuilder modelBuilder,
             IDatabaseMapper databaseMapper)
             => new MsAccessQueryProvider(
-                connectionString, new MsAccessSqlExpressionVisitorFactory(databaseMapper), modelBuilder, new Logger());
+                connectionString, new MsAccessSqlExpressionVisitorFactory(databaseMapper), modelBuilder, new Logger(), databaseMapper);
 
         /// <summary>
         /// Registers instance of this type to <see cref="QueryProviderFactories"/>.
