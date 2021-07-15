@@ -111,20 +111,20 @@ namespace Kros.KORM.MsAccess.UnitTests.Integration
         }
 
         [SkippableFact]
-        public async Task InsertDataAsync_Ace()
+        public async Task InsertDataAsync_AceAsync()
         {
             Helpers.SkipTestIfAceProviderNotAvailable();
-            await InsertDataAsyncCore(ProviderType.Ace);
+            await InsertDataAsyncCoreAsync(ProviderType.Ace);
         }
 
         [SkippableFact]
-        public async Task InsertDataAsync_Jet()
+        public async Task InsertDataAsync_JetAsync()
         {
             Helpers.SkipTestIfJetProviderNotAvailable();
-            await InsertDataAsyncCore(ProviderType.Jet);
+            await InsertDataAsyncCoreAsync(ProviderType.Jet);
         }
 
-        private async Task InsertDataAsyncCore(ProviderType provider)
+        private async Task InsertDataAsyncCoreAsync(ProviderType provider)
         {
             using (var helper = Helpers.CreateDatabase(provider, CreateTable_TestTable))
             {

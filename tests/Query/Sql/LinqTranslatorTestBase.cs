@@ -189,6 +189,11 @@ namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
                 throw new NotImplementedException();
             }
 
+            public IIdGenerator CreateIdGenerator(Type dataType, string tableName, int batchSize)
+            {
+                throw new NotImplementedException();
+            }
+
             public IQueryable CreateQuery(Expression expression)
             {
                 throw new NotImplementedException();
@@ -271,6 +276,11 @@ namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
             }
 
             public ISqlExpressionVisitor GetExpressionVisitor() => throw new NotImplementedException();
+
+            public IIdGeneratorsForDatabaseInit GetIdGeneratorsForDatabaseInit()
+            {
+                throw new NotImplementedException();
+            }
 
             public void SetParameterDbType(DbParameter parameter, string tableName, string columnName)
             {
