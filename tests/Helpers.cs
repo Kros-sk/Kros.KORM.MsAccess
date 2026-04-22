@@ -34,16 +34,16 @@ namespace Kros.KORM.MsAccess.UnitTests
         }
 
         public static KormHelper CreateDatabase(ProviderType provider, params string[] initDatabaseScripts)
-            => new KormHelper(new MsAccessTestHelper(provider, initDatabaseScripts));
+            => new(new MsAccessTestHelper(provider, initDatabaseScripts));
 
         private const string ProviderNotAvailableMessage = "MS Access provider {0} is not available.";
 
         public static void SkipTestIfAceProviderNotAvailable()
-            => Skip.If(!MsAccessDataHelper.HasProvider(ProviderType.Ace),
+            => Assert.SkipUnless(MsAccessDataHelper.HasProvider(ProviderType.Ace),
                 string.Format(ProviderNotAvailableMessage, MsAccessDataHelper.AceProviderBase));
 
         public static void SkipTestIfJetProviderNotAvailable()
-            => Skip.If(!MsAccessDataHelper.HasProvider(ProviderType.Jet),
+            => Assert.SkipUnless(MsAccessDataHelper.HasProvider(ProviderType.Jet),
                 string.Format(ProviderNotAvailableMessage, MsAccessDataHelper.JetProviderBase));
     }
 }
