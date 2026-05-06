@@ -36,7 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Kros.KORM.MsAccess.nuspec" />
     <None Include="icon.ico" />
     <Content Include="Resources\SqlIdGeneratorTableScript.sql" />
   </ItemGroup>
