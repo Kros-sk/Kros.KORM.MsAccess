@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using Kros.Data;
+﻿using Kros.Data;
 using Kros.Data.BulkActions;
 using Kros.KORM.Data;
 using Kros.KORM.Materializer;
@@ -18,6 +17,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
 {
@@ -80,10 +80,10 @@ namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
             var visitor = CreateVisitor();
             QueryInfo sql = visitor.GenerateSql(expression);
 
-            sql.Query.Should().Be(expectedQuery.Query);
-            CompareLimitOffsetDataReaders(sql.Reader as LimitOffsetDataReader, expectedQuery.Reader as LimitOffsetDataReader)
-                .Should().BeTrue();
-            parameters?.Should().BeEquivalentTo(ParameterExtractor.ExtractParameters(expression));
+            Assert.Equal(expectedQuery.Query, sql.Query);
+            Assert.True(CompareLimitOffsetDataReaders(
+                sql.Reader as LimitOffsetDataReader, expectedQuery.Reader as LimitOffsetDataReader));
+            Assert.Equal(ParameterExtractor.ExtractParameters(expression), parameters ?? []);
         }
 
         /// <summary>

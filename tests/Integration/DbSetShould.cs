@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using Kros.Data.MsAccess;
+﻿using Kros.Data.MsAccess;
 using Kros.KORM.Converter;
 using Kros.KORM.Metadata;
 using Kros.KORM.Metadata.Attribute;
@@ -193,13 +192,13 @@ namespace Kros.KORM.MsAccess.UnitTests.Integration
         {
             var person = korm.Query<Person>().FirstOrDefault(p => p.Id == 1);
 
-            person.Should().NotBeNull();
-            person.Id.Should().Be(1);
-            person.Age.Should().Be(32);
-            person.FirstName.Should().Be("Milan");
-            person.LastName.Should().Be("Martiniak");
-            person.Address.Should().BeEquivalentTo(new List<string>() { "Petzvalova", "Pekna", "Zelena" });
-            person.TestLongText.Should().Be("Lorem ipsum dolor sit amet 1.");
+            Assert.NotNull(person);
+            Assert.Equal(1, person.Id);
+            Assert.Equal(32, person.Age);
+            Assert.Equal("Milan", person.FirstName);
+            Assert.Equal("Martiniak", person.LastName);
+            Assert.Equal(["Petzvalova", "Pekna", "Zelena"], person.Address);
+            Assert.Equal("Lorem ipsum dolor sit amet 1.", person.TestLongText);
         }
 
         #endregion

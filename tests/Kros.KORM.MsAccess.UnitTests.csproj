@@ -32,7 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentAssertions" Version="[7.2.2]" />
     <PackageReference Include="Kros.KORM" Version="5.1.1" />
     <PackageReference Include="Kros.Utils.MsAccess" Version="2.1.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.5.1" />
