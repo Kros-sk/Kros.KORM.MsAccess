@@ -167,7 +167,7 @@ namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
                 throw new NotImplementedException();
             }
 
-            public IBulkInsert CreateBulkInsert()
+            public IBulkInsert CreateBulkInsert(object options)
             {
                 throw new NotImplementedException();
             }

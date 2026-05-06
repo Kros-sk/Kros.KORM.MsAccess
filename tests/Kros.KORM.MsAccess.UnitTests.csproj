@@ -33,9 +33,9 @@
 
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="[7.2.2]" />
-    <PackageReference Include="Kros.KORM" Version="4.3.0" />
+    <PackageReference Include="Kros.KORM" Version="5.1.1" />
     <PackageReference Include="Kros.Utils.MsAccess" Version="2.1.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.5.1" />
     <PackageReference Include="Nito.AsyncEx.Context" Version="5.1.2" />
     <PackageReference Include="Validation" Version="2.6.68" />
     <PackageReference Include="xunit.v3" Version="3.2.2" />
