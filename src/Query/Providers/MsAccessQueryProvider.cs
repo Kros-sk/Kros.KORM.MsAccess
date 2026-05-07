@@ -70,7 +70,7 @@ namespace Kros.KORM.Query.MsAccess
         /// <returns>
         /// Instance of <see cref="MsAccessBulkInsert" />.
         /// </returns>
-        public override IBulkInsert CreateBulkInsert()
+        public override IBulkInsert CreateBulkInsert(object options)
         {
             var transaction = GetCurrentTransaction();
             if (IsExternalConnection || transaction != null)

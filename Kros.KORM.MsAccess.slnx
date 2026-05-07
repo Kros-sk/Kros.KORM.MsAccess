@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="build.yml" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="src/Kros.KORM.MsAccess.csproj" />
+<Project Path="tests/Kros.KORM.MsAccess.UnitTests.csproj" />
+</Solution>

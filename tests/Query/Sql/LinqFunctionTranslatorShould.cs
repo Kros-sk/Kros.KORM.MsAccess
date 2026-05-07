@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using Kros.KORM.Metadata.Attribute;
+﻿using Kros.KORM.Metadata.Attribute;
 using Kros.KORM.Query.Providers;
 using Kros.KORM.Query.Sql;
 using Kros.KORM.Query.Sql.MsAccess;
@@ -119,7 +118,7 @@ namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
                 .Skip(10);
             Action action = () => visitor.GenerateSql(query.Expression);
 
-            action.Should().Throw<InvalidOperationException>();
+            Assert.Throws<InvalidOperationException>(action);
         }
 
         [Fact]
@@ -173,7 +172,7 @@ namespace Kros.KORM.MsAccess.UnitTests.Query.Sql
                 .Skip(10);
             Action action = () => visitor.GenerateSql(query.Expression);
 
-            action.Should().NotThrow();
+            action();
         }
     }
 }

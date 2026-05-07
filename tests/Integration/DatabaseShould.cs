@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using Kros.Data.MsAccess;
+﻿using Kros.Data.MsAccess;
 using Kros.KORM.Metadata.Attribute;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +10,31 @@ namespace Kros.KORM.MsAccess.UnitTests.Integration
     {
         #region Nested Classes
 
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
         [Alias("LimitOffsetTest")]
         private class LimitOffsetTestData
         {
             public int Id { get; set; }
             public string Value { get; set; }
+
+            public override bool Equals(object obj)
+            {
+                if (obj is LimitOffsetTestData data)
+                {
+                    if (Id == data.Id)
+                    {
+                        if ((Value is null) && (data.Value is null))
+                        {
+                            return true;
+                        }
+                        return Value.Equals(data.Value, System.StringComparison.Ordinal);
+                    }
+                    return false;
+                }
+                return base.Equals(obj);
+            }
         }
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 
         #endregion
 
@@ -82,7 +100,7 @@ namespace Kros.KORM.MsAccess.UnitTests.Integration
                     .Take(3)
                     .ToList();
 
-                data.Should().BeEquivalentTo(expectedData);
+                Assert.Equal(expectedData, data);
             }
         }
 
@@ -115,7 +133,7 @@ namespace Kros.KORM.MsAccess.UnitTests.Integration
                     .Skip(17)
                     .ToList();
 
-                data.Should().BeEquivalentTo(expectedData);
+                Assert.Equal(expectedData, data);
             }
         }
 
@@ -149,7 +167,7 @@ namespace Kros.KORM.MsAccess.UnitTests.Integration
                     .Take(3)
                     .ToList();
 
-                data.Should().BeEquivalentTo(expectedData);
+                Assert.Equal(expectedData, data);
             }
         }
 
@@ -178,7 +196,7 @@ namespace Kros.KORM.MsAccess.UnitTests.Integration
                     .Skip(100)
                     .ToList();
 
-                data.Should().BeEquivalentTo(expectedData);
+                Assert.Equal(expectedData, data);
             }
         }
 
@@ -200,10 +218,10 @@ namespace Kros.KORM.MsAccess.UnitTests.Integration
         {
             using (var helper = Helpers.CreateDatabase(provider, LimitOffsetInitScripts))
             {
-                var expectedData = new List<LimitOffsetTestData>(new[] {
+                LimitOffsetTestData[] expectedData = new[] {
                     new LimitOffsetTestData() { Id = 19, Value = "nineteen" },
                     new LimitOffsetTestData() { Id = 20, Value = "twenty" },
-                });
+                };
 
                 List<LimitOffsetTestData> data = helper.Korm.Query<LimitOffsetTestData>()
                     .OrderBy(item => item.Id)
@@ -211,7 +229,7 @@ namespace Kros.KORM.MsAccess.UnitTests.Integration
                     .Take(100)
                     .ToList();
 
-                data.Should().BeEquivalentTo(expectedData);
+                Assert.Equal(expectedData, data);
             }
         }
 
