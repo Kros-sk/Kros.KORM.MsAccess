@@ -1,43 +1,57 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-    <RootNamespace>Kros.KORM.MsAccess</RootNamespace>
-    <AssemblyName>Kros.KORM.MsAccess</AssemblyName>
-    <LangVersion>latest</LangVersion>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <RootNamespace>Kros.KORM.MsAccess</RootNamespace>
+        <AssemblyName>Kros.KORM.MsAccess</AssemblyName>
+        <LangVersion>latest</LangVersion>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <SignAssembly>false</SignAssembly>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <AssemblyTitle>Kros.KORM.MsAccess</AssemblyTitle>
-    <Product>Kros.KORM.MsAccess</Product>
-    <Company>KROS a. s.</Company>
-    <Description>KORM.MsAccess is fast, easy to use, micro .NET ORM tool for MsAccess. (Kros Object Relation Mapper)</Description>
-    <Copyright>Copyright © KROS a. s.</Copyright>
-	<Version>2.0.0</Version>
-    <ComVisible>false</ComVisible>
-  </PropertyGroup>
+    <PropertyGroup>
+        <AssemblyTitle>Kros.KORM.MsAccess</AssemblyTitle>
+        <Product>Kros.KORM.MsAccess</Product>
+        <Company>KROS a. s.</Company>
+        <Description>KORM.MsAccess is fast, easy to use, micro .NET ORM tool for MsAccess. (Kros Object Relation Mapper)</Description>
+        <Copyright>Copyright © KROS a. s.</Copyright>
+        <Version>2.2.0</Version>
+        <ComVisible>false</ComVisible>
 
-  <ItemGroup>
-    <AssemblyAttribute Include="System.Runtime.InteropServices.GuidAttribute">
-      <_Parameter1>4c0111de-a54d-4964-affb-64979e20203d</_Parameter1>
-    </AssemblyAttribute>
-  </ItemGroup>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/Kros-sk/Kros.Utils.MsAccess/blob/master/README.md</PackageProjectUrl>
+        <PackageReleaseNotes>https://github.com/Kros-sk/Kros.Utils.MsAccess/releases</PackageReleaseNotes>
+        <PackageIcon>logo.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="System.Configuration" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="/" />
+        <None Include="../logo.png" Pack="true" PackagePath="/" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Kros.KORM" Version="5.1.1" />
-    <PackageReference Include="Kros.Utils.MsAccess" Version="2.1.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.InteropServices.GuidAttribute">
+            <_Parameter1>4c0111de-a54d-4964-affb-64979e20203d</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Include="icon.ico" />
-    <Content Include="Resources\SqlIdGeneratorTableScript.sql" />
-  </ItemGroup>
+    <ItemGroup>
+        <Reference Include="System.Configuration" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Kros.KORM" Version="5.2.0" />
+        <PackageReference Include="Kros.Utils.MsAccess" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="Resources\SqlIdGeneratorTableScript.sql" />
+    </ItemGroup>
 
 </Project>

@@ -1,66 +1,59 @@
 trigger:
-  tags:
+  batch: false
+  branches:
     include:
-    - v*
+      - main
 
-pool: Default
-
-resources:
-  repositories:
-    - repository: templates
-      type: git
-      name: DevShared/Templates
+pool:
+  name: Default
+  demands: Agent.OS -equals Windows_NT
 
 variables:
   - group: Nuget
-  - name: 'buildPlatform'
-    value: 'any cpu'
-  - name: buildConfiguration
-    value: 'Release'
-  - name: solution
-    value: 'Kros.KORM.MsAccess.sln'
-  - name: projectName
-    value: 'Kros.KORM.MsAccess'
-  - name: testProjectName
-    value: 'Kros.KORM.MsAccess.UnitTests'
 
 steps:
-  - template: steps/delete-nupkgs.yml@templates
+  - pwsh: |
+      Get-ChildItem -Path '$(Build.ArtifactStagingDirectory)' -Recurse -Include *.nupkg, *.snupkg | Remove-Item
+      Get-ChildItem -Path '$(Build.SourcesDirectory)' -Recurse -Include *.nupkg, *.snupkg | Remove-Item
+    displayName: Clear NuGet packages
 
-  - template: steps/nuget-download-and-restore.yml@templates
-    parameters:
-      useNugetConfig: 'false'
-
-  - task: VSBuild@1
+  - task: DotNetCoreCLI@2
     displayName: Build
     inputs:
-      solution: '$(solution)'
-      msbuildArgs: '/verbosity:normal /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true'
-      platform: '$(buildPlatform)'
-      configuration: '$(buildConfiguration)'
+      command: build
+      projects: Kros.KORM.MsAccess.slnx
+      arguments: --configuration Release
 
-  - task: VSTest@2
-    displayName: Tests
+  - task: DotNetCoreCLI@2
+    displayName: Test
     inputs:
-      testSelector: 'testAssemblies'
-      testAssemblyVer2: '**/$(buildConfiguration)/$(testProjectName).dll'
-      platform: '$(buildPlatform)'
-      configuration: '$(buildConfiguration)'
+      command: test
+      projects: Kros.KORM.MsAccess.slnx
+      publishTestResults: false
+      arguments: --configuration Release --logger trx --results-directory "$(Common.TestResultsDirectory)"
 
-  - task: NuGetCommand@2
-    displayName: 'NuGet pack'
+  - task: PublishTestResults@2
+    displayName: Publish test results
+    condition: always()
     inputs:
-      command: pack
-      packagesToPack: '**/$(projectName).csproj'
+      testResultsFormat: VSTest
+      testResultsFiles: '*.trx'
+      searchFolder: $(Common.TestResultsDirectory)
 
-  - task: CopyFiles@2
-    displayName: 'Copy package files to staging directory'
-    inputs:
-      SourceFolder: '$(System.DefaultWorkingDirectory)'
-      Contents: '**/$(projectName).nupkg'
-      TargetFolder: '$(Build.ArtifactStagingDirectory)'
-      FlattenFolders: true
+  - ${{ if in(variables['Build.SourceBranchName'], 'main', 'net48') }}:
 
-  - template: steps/nuget-push.yml@templates
-    parameters:
-      feed: $(nuget.feed)
+    - task: CopyFiles@2
+      displayName: Copy package files to staging directory
+      inputs:
+        Contents: |
+          **/*.nupkg
+          **/*.snupkg
+        TargetFolder: $(Build.ArtifactStagingDirectory)
+        FlattenFolders: true
+
+    - pwsh: |
+        Get-ChildItem '$(Build.ArtifactStagingDirectory)/*.nupkg' | ForEach-Object {
+          Write-Host 'Pushing package $($_.Name)'
+          dotnet nuget push --api-key $(nugetOrgApiKey) --source 'https://api.nuget.org/v3/index.json'  --skip-duplicate $_.FullName
+        }
+      displayName: Push to NuGet.org
