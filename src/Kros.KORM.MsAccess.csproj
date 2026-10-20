@@ -54,4 +54,8 @@
         <Content Include="Resources\SqlIdGeneratorTableScript.sql" />
     </ItemGroup>
 
+    <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    </PropertyGroup>
+
 </Project>
