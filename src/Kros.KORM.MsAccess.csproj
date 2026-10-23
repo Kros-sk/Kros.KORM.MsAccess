@@ -16,7 +16,7 @@
         <Company>KROS a. s.</Company>
         <Description>KORM.MsAccess is fast, easy to use, micro .NET ORM tool for MsAccess. (Kros Object Relation Mapper)</Description>
         <Copyright>Copyright © KROS a. s.</Copyright>
-        <Version>2.2.0</Version>
+        <Version>2.3.0</Version>
         <ComVisible>false</ComVisible>
 
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -46,8 +46,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Kros.KORM" Version="5.2.0" />
-        <PackageReference Include="Kros.Utils.MsAccess" Version="2.2.0" />
+        <PackageReference Include="Kros.KORM" Version="5.3.0" />
+        <PackageReference Include="Kros.Utils.MsAccess" Version="2.3.0" />
     </ItemGroup>
 
     <ItemGroup>
